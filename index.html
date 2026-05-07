@@ -1,0 +1,485 @@
+<!--
+  ================================================
+  PROJETO DE PORTFÓLIO — Desenvolvimento Front-End
+  ================================================
+  Descrição : Site institucional fictício (DevSolutions)
+              desenvolvido como projeto de portfólio para
+              demonstrar habilidades em HTML, CSS e JavaScript.
+  Tecnologias: HTML5 semântico, CSS3 (variáveis, grid, flex,
+               animações), JavaScript puro (ES6+)
+  Destaques  : Design responsivo, animações com
+               IntersectionObserver, menu mobile, formulário
+               com validação e contador animado.
+  ================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevSolutions — Soluções Digitais</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <nav class="nav container">
+
+      <!-- Logo -->
+      <a href="#inicio" class="logo" aria-label="DevSolutions">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="28" height="28" rx="8" fill="#0057FF"/>
+            <path d="M7 9L13 14L7 19" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 19H21" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Dev<strong>Solutions</strong>
+      </a>
+
+      <!-- Menu desktop -->
+      <ul class="nav-links" role="list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+
+      <!-- Hambúrguer mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navegação">
+      <ul role="list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ===================== HERO ===================== -->
+  <section id="inicio" class="hero">
+    <!-- Decoração de fundo -->
+    <div class="hero-bg-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-bg-orb orb-2" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <div class="hero-badge fade-in">✦ Tecnologia que transforma negócios</div>
+      <h1 class="hero-title fade-in delay-1">
+        Soluções digitais para o seu<br />
+        <span class="hero-highlight">negócio crescer</span>
+      </h1>
+      <p class="hero-subtitle fade-in delay-2">
+        Desenvolvemos sites, sistemas e estratégias digitais que geram resultados reais. Do planejamento ao lançamento — com você em cada etapa.
+      </p>
+      <div class="hero-actions fade-in delay-3">
+        <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+      </div>
+
+      <!-- Estatísticas rápidas -->
+      <div class="hero-stats fade-in delay-4">
+        <div class="stat">
+          <span class="stat-number">+120</span>
+          <span class="stat-label">Projetos entregues</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Clientes satisfeitos</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-number">5 anos</span>
+          <span class="stat-label">De mercado</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagem/mockup decorativo -->
+    <div class="hero-visual fade-in delay-2" aria-hidden="true">
+      <div class="mockup-window">
+        <div class="mockup-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mockup-content">
+          <div class="mock-line w-60"></div>
+          <div class="mock-line w-40"></div>
+          <div class="mock-block"></div>
+          <div class="mock-line w-80"></div>
+          <div class="mock-line w-50"></div>
+          <div class="mock-btn"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== SOBRE ===================== -->
+  <section id="sobre" class="sobre section-padding">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">Quem somos</span>
+        <h2>Tecnologia com propósito e<br/> <em>resultado de verdade</em></h2>
+        <p class="section-desc">A DevSolutions nasceu da paixão por resolver problemas reais com tecnologia de ponta. Somos um time multidisciplinar apaixonado por construir experiências digitais que fazem diferença.</p>
+      </div>
+
+      <div class="mvv-grid">
+
+        <div class="mvv-card reveal delay-1">
+          <div class="mvv-icon" aria-hidden="true">
+            <!-- Ícone Missão -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3>Missão</h3>
+          <p>Entregar soluções digitais que simplificam processos, potencializam vendas e conectam pessoas — com excelência técnica e agilidade.</p>
+        </div>
+
+        <div class="mvv-card reveal delay-2">
+          <div class="mvv-icon" aria-hidden="true">
+            <!-- Ícone Visão -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Visão</h3>
+          <p>Ser referência nacional em desenvolvimento digital, reconhecida pela inovação, transparência e pelo impacto positivo nos negócios dos nossos clientes.</p>
+        </div>
+
+        <div class="mvv-card reveal delay-3">
+          <div class="mvv-icon" aria-hidden="true">
+            <!-- Ícone Valores -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3>Valores</h3>
+          <p>Ética, colaboração, melhoria contínua e foco no cliente. Acreditamos que boas relações constroem grandes projetos — e grandes resultados.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== SERVIÇOS ===================== -->
+  <section id="servicos" class="servicos section-padding">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">O que fazemos</span>
+        <h2>Serviços pensados para<br/> <em>cada fase do seu negócio</em></h2>
+        <p class="section-desc">Do zero ao escalar — oferecemos soluções completas para empresas que querem crescer com tecnologia.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+            </svg>
+          </div>
+          <span class="service-number">01</span>
+          <h3>Criação de Sites</h3>
+          <p>Sites institucionais, landing pages e portfólios modernos, responsivos e otimizados para conversão.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+            </svg>
+          </div>
+          <span class="service-number">02</span>
+          <h3>Sistemas Web</h3>
+          <p>Plataformas sob medida: ERPs, CRMs, dashboards e aplicações web completas para automatizar sua operação.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </div>
+          <span class="service-number">03</span>
+          <h3>SEO & Performance</h3>
+          <p>Estratégias de posicionamento orgânico, otimização técnica e velocidade para rankear no Google e converter mais.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="service-number">04</span>
+          <h3>E-commerce</h3>
+          <p>Lojas virtuais completas com gestão de estoque, pagamentos integrados e experiência de compra impecável.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <span class="service-number">05</span>
+          <h3>Manutenção & Suporte</h3>
+          <p>Monitoramento contínuo, atualizações de segurança e suporte técnico ágil para manter seu projeto sempre no ar.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <span class="service-number">06</span>
+          <h3>Apps Mobile</h3>
+          <p>Aplicativos híbridos para iOS e Android com design nativo, performance elevada e integração com seus sistemas.</p>
+          <a href="#contato" class="service-link">Saiba mais →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section id="depoimentos" class="depoimentos section-padding">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">Depoimentos</span>
+        <h2>O que nossos clientes<br/> <em>falam sobre nós</em></h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal delay-1">
+          <div class="quote-icon" aria-hidden="true">"</div>
+          <p class="testimonial-text">A DevSolutions transformou completamente nossa presença digital. O novo site aumentou nossas consultas em 70% em apenas 3 meses. Recomendo demais!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-label="Foto de Fernanda Rocha">FR</div>
+            <div class="author-info">
+              <strong>Fernanda Rocha</strong>
+              <span>CEO, Clinica Viva Bem</span>
+            </div>
+            <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="quote-icon" aria-hidden="true">"</div>
+          <p class="testimonial-text">Profissionalismo do início ao fim. Nosso sistema interno ficou exatamente como precisávamos — ágil, moderno e com a equipe sempre disponível para ajudar.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-label="Foto de Ricardo Alves">RA</div>
+            <div class="author-info">
+              <strong>Ricardo Alves</strong>
+              <span>Diretor, Construtora Nova Era</span>
+            </div>
+            <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div class="quote-icon" aria-hidden="true">"</div>
+          <p class="testimonial-text">Nossa loja virtual saiu do papel em tempo recorde. A DevSolutions entregou além do esperado — design incrível e suporte impecável pós-lançamento.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-label="Foto de Juliana Melo">JM</div>
+            <div class="author-info">
+              <strong>Juliana Melo</strong>
+              <span>Fundadora, Moda & Arte Store</span>
+            </div>
+            <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== CONTATO ===================== -->
+  <section id="contato" class="contato section-padding">
+    <div class="container">
+
+      <div class="contato-inner">
+
+        <div class="contato-info reveal">
+          <span class="section-tag">Fale conosco</span>
+          <h2>Vamos construir algo<br/> <em>incrível juntos?</em></h2>
+          <p>Conte-nos sobre seu projeto. Nossa equipe retorna em até 24 horas com uma análise personalizada e sem compromisso.</p>
+
+          <ul class="contact-details" role="list">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <span>contato@devsolutions.com.br</span>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.17 2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+                </svg>
+              </span>
+              <span>(11) 9 8432-7651</span>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <span>Rua das Flores, 742 — Pinheiros, São Paulo – SP</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contato-form reveal delay-2" id="contato-form" novalidate aria-label="Formulário de contato">
+          <div class="form-group">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="João da Silva" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="joao@empresa.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" placeholder="Desenvolvimento de site" />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu projeto..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-text">Enviar mensagem</span>
+            <span class="btn-icon" aria-hidden="true">→</span>
+          </button>
+          <div class="form-success" id="form-success" role="alert" aria-live="polite"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#inicio" class="logo logo-white" aria-label="DevSolutions">
+            <span class="logo-icon">
+              <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="28" height="28" rx="8" fill="#0057FF"/>
+                <path d="M7 9L13 14L7 19" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 19H21" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Dev<strong>Solutions</strong>
+          </a>
+          <p>Soluções digitais que impulsionam o crescimento do seu negócio com tecnologia, design e estratégia.</p>
+          <div class="social-links" role="list" aria-label="Redes sociais">
+            <a href="javascript:void(0)" class="social-link" aria-label="LinkedIn" role="listitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-link" aria-label="Instagram" role="listitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-link" aria-label="GitHub" role="listitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-link" aria-label="Twitter / X" role="listitem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Links rápidos">
+          <h4>Navegação</h4>
+          <ul role="list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Serviços">
+          <h4>Serviços</h4>
+          <ul role="list">
+            <li><a href="#servicos">Criação de Sites</a></li>
+            <li><a href="#servicos">Sistemas Web</a></li>
+            <li><a href="#servicos">SEO & Performance</a></li>
+            <li><a href="#servicos">E-commerce</a></li>
+            <li><a href="#servicos">Apps Mobile</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-newsletter">
+          <h4>Novidades & Conteúdo</h4>
+          <p>Receba dicas de tecnologia e cases de sucesso diretamente no seu e-mail.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="seu@email.com" aria-label="E-mail para newsletter" />
+            <button type="button" aria-label="Assinar newsletter">→</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 DevSolutions. Todos os direitos reservados.</p>
+        <p class="portfolio-credit">
+          <span class="portfolio-badge" title="Este é um projeto fictício criado para fins de portfólio">
+            ✦ Desenvolvido como projeto de portfólio
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
